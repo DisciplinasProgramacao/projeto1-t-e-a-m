@@ -31,7 +31,7 @@ public class Data{
     //constante: dias de cada mês
     private static final int[] DIASDOMES = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     private static final int ANO_ATUAL = 2022;
-    private static final String[] DIASDASEMANA = {"sábado", "domingo", "segunda", "terça", "quarta", "quinta", "sexta" }; //2022 começa em um sábado
+    private static final String[] DIASDASEMANA = {"sabado", "domingo", "segunda", "terça", "quarta", "quinta", "sexta" }; //2022 começa em um sábado
 
     //atributos 
     private int dia;
@@ -110,7 +110,10 @@ public class Data{
     * Verifica se a data armazenada é válida (método privado). Só valem datas de 1900 em diante.
     * @return TRUE se é válida ; FALSE se não é válida
     */
-    private Boolean dataValida(){
+    
+    //era assim a princípio, "private Boolean dataValida(){" tive que mudar por causa do erro
+    
+    Boolean dataValida(){
         Boolean resposta = true;        //resposta sobre a validade
         int maximoDeDias=0;
 

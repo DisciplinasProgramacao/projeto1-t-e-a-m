@@ -19,11 +19,11 @@ class DataTest {
 	@Test
 	void diaDaSemanaEm2022() {
 		Data diaSemana = new Data();
-		assertEquals("sábado",diaSemana.diaDaSemanaEm2022("1/1/1900")); //Por que do warning ??
+		assertEquals("sabado",diaSemana.diaDaSemanaEm2022("1/1/1900")); //Por que do warning ??
 	}
 	@Test 
 	void dataFormatada() {
 		Data formatada = new Data();
-		assertEquals("1/1/1990",formatada.dataFormatada());
+		assertEquals("01/01/1990",formatada.dataFormatada());
 	}
 }
