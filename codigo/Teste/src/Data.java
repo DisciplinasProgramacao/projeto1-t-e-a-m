@@ -25,8 +25,8 @@
 
  /** Classe data simples para fundamentos de POO */
 public class Data{
-    
-
+  
+	
     //#region atributos
     //constante: dias de cada mês
     private static final int[] DIASDOMES = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -54,6 +54,8 @@ public class Data{
         if (!this.dataValida()){     //se a data não é válida... (método da própria classe)
             this.dia = this.mes = 1;
             this.ano = 1900;
+            
+        	System.out.println("mudança");
         }
 
     }
