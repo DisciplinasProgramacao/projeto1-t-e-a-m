@@ -138,7 +138,8 @@ public class Data{
      * Datas inválidas retornam e são calculadas como 01/01/2022
      * @return O dia da semana da data parametrizada em 2022.
      */
-    public static String diaDaSemanaEm2022(String data){
+    //public static String
+    public String diaDaSemanaEm2022(String data){
         
         int deslocamento = 0;
         int totalDias = 0;
