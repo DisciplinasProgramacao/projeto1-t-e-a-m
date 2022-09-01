@@ -1,8 +1,7 @@
 
 public class Compromisso {
-	
-	private String data, tarefa;
 
+	private String data, tarefa;
 
 	public Compromisso() {
 		this.data = "";
@@ -14,10 +13,11 @@ public class Compromisso {
 		this.tarefa = tarefa;
 	}
 
+
 	public String getTarefa() {
 		return tarefa;
 	}
-	
+
 	public String getData() {
 		return data;
 	}
@@ -25,12 +25,12 @@ public class Compromisso {
 	public void setTarefa(String tarefa) {
 		this.tarefa = tarefa;
 	}
-	
+
 	public void setData(String data) {
 		this.data = data;
 	}
 
 	public void imprimir() {
-		System.out.println("Data: " + this.data + "Tarefa:" + this.tarefa);
+		System.out.println("Data: " + this.data + "- Tarefa: " + this.tarefa);
 	}
 }

@@ -84,7 +84,7 @@ public class ListaEncadeada {
 		Celula aux;
 
 		if (!listaVazia()) {
-			System.out.println("Conteúdo da lista:");
+			System.out.println("Conteúdo da Agenda:");
 
 			aux = primeiro.getProximo();
 			while (aux != null) {
@@ -92,6 +92,6 @@ public class ListaEncadeada {
 				aux = aux.getProximo();
 			}
 		} else
-			throw new Exception("Não foi possível imprimir o conteúdo da lista: a lista está vazia!");
+			throw new Exception("Não há compromissos na agenda!");
 	}
 }
