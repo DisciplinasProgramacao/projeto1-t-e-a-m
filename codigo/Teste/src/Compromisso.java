@@ -31,6 +31,6 @@ public class Compromisso {
 	}
 
 	public void imprimir() {
-		System.out.println("Data: " + this.data + "- Tarefa: " + this.tarefa);
+		System.out.println("Data: " + this.data + " - Tarefa: " + this.tarefa);
 	}
 }
