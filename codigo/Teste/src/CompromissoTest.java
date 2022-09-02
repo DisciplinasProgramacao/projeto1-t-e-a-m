@@ -5,9 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class CompromissoTest {
-	
-	//permitir a criação de compromissos em data específicas. Não precisa marcar horário
-	
+
+	// permitir a criação de compromissos em data específicas. Não precisa marcar
+	// horário
+
 	@Test
 	public void cadastrarCompromisso() {
 		Compromisso compromisso = new Compromisso();
@@ -15,10 +16,9 @@ public class CompromissoTest {
 		
 		
 	}
-	
-	
+
 	// cadastrar compromissos periódicos
-	
+
 	@Test
 	public void cadastrarCompromissoPeriodico() {
 		CompromissoPeriodico compromissoPeriodico = new CompromissoPeriodico();
@@ -26,11 +26,10 @@ public class CompromissoTest {
 		
 		
 	}
-	
-		
-	
-	// fornecer um relatório de compromissos entre uma data inicial e uma data final (incluindo ambas)
-	
+
+	// fornecer um relatório de compromissos entre uma data inicial e uma data final
+	// (incluindo ambas)
+
 	@Test
 	public void relatorioCompromissos() {
 		RelatorioCompromissos relatorioCompromissos = new RelatorioCompromissos();
@@ -38,13 +37,12 @@ public class CompromissoTest {
 		
 		
 	}
-	
+
 	@Test
 	void criarCompromissoPeriódico() {
-		
+
 	}
-	
-	
+
 	@Test
 	void mostrarTarefa() {
 		Tarefa mostrar = new Tarefa();
@@ -56,15 +54,16 @@ public class CompromissoTest {
 		Terefa adicionar = new Tarefa();
 		assertTrue(adicionar.adicionarTarefa());
 	}
-	
+
 	@Test
 	void excluirTarefa() {
 		Tarefa excluir = new Tarefa();
 		assertEquals(excluir.excluirTarefa());
 	}
-	@Test 
+
+	@Test
 	void compromissoPeriodico() {
 		Data formatada = new Data();
-		assertEquals("01/01/1990",formatada.dataFormatada());
+		assertEquals("01/01/1990", formatada.dataFormatada());
 	}
 }

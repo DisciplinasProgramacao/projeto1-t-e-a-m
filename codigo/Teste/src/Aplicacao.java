@@ -1,6 +1,14 @@
 import java.util.Scanner;
 
 public class Aplicacao {
+	public static void menu() {
+		System.out.println("\n\tAgenda de Compromissos:");
+		System.out.println("1. Incluir compromisso na agenda");
+		System.out.println("2. Remover compromisso da agenda");
+		System.out.println("3. Consultar compromissos agendados");
+		System.out.println("4. Finalizar a agenda");
+		System.out.println("Digite a opcao desejada:");
+	}
 	public static void main(String[] args) {
 
 		ListaEncadeada minhaLista;
@@ -13,8 +21,8 @@ public class Aplicacao {
 		
 		try (Scanner ler = new Scanner(System.in)) {
 			while(isAtivo){
-				
-				System.out.println("1- Adicionar compromisso \n2- Remover compromisso \n3- Listar compromissos \n0- Finalizar \n: ");
+				menu();
+
 				num = ler.nextLine();
 				
 				switch(Integer.parseInt(num)) {
@@ -52,7 +60,7 @@ public class Aplicacao {
 					}
 					break;
 					
-				case 0:
+				case 4:
 					isAtivo = false;
 					System.out.println("Finalizado!");
 					break;

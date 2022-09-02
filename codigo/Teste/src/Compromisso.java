@@ -13,7 +13,6 @@ public class Compromisso {
 		this.tarefa = tarefa;
 	}
 
-
 	public String getTarefa() {
 		return tarefa;
 	}
