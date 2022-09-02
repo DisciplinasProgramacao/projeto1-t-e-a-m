@@ -84,7 +84,7 @@ public class ListaEncadeada {
 		Celula aux;
 
 		if (!listaVazia()) {
-			System.out.println("Conteúdo da Agenda:");
+			//System.out.println("Conteúdo da Agenda:");
 
 			aux = primeiro.getProximo();
 			while (aux != null) {
