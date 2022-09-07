@@ -10,6 +10,12 @@ public class CompromissoTest {
 	// horário
 
 	@Test
+	public void mostrarDataETarefa() {
+		Compromisso data = new Compromisso("9/9/22","trabalho");
+		assertEquals("9/9/22", data.getData());
+		assertEquals("trabalho", data.getTarefa());
+	}
+	/*@Test
 	public void cadastrarCompromisso() {
 		Compromisso compromisso = new Compromisso();
 		assertEquals()
@@ -65,5 +71,5 @@ public class CompromissoTest {
 	void compromissoPeriodico() {
 		Data formatada = new Data();
 		assertEquals("01/01/1990", formatada.dataFormatada());
-	}
+	}*/
 }
