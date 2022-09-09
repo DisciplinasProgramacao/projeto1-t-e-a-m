@@ -175,7 +175,32 @@ public class Data{
           "/" + String.format("%4d",this.ano));
     }
     
-
+     
+    public String pularDias(Data data, int diasPulados) {
+    	
+    	data.dia += diasPulados;
+    	if(data.dia > DIASDOMES[data.mes]) {
+			data.dia -= DIASDOMES[data.mes];
+			data.mes++;
+		}
+		if(data.mes > 12) {
+			data.ano++;
+			data.mes -= 12;
+		}
+    	return data.dataFormatada();
+    }
+//    
+//    public void stringToData(String dataString) {
+//    	int dia, mes, ano;
+//    	
+//    	String partes[] = dataString.split("/");
+//    	dia = Integer.parseInt(partes[0]);
+//    	mes = Integer.parseInt(partes[1]);
+//    	ano = Integer.parseInt(partes[2]);
+//    	
+//    	Data data = new Data(dia, mes, ano);
+//    	//return data;
+//    }
 
     
 }
