@@ -30,7 +30,7 @@ public class Aplicacao {
 				switch(Integer.parseInt(num)) {
 				
 				case 1:
-					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
+					System.out.println("Informe o dia, mês e ano separados por '/'");
 					data = ler.nextLine();
 					
 					System.out.println("Informe a atividade");
@@ -105,7 +105,7 @@ public class Aplicacao {
 					break;
 					
 				default:
-					System.out.println("Comando invÃ¡lido");
+					System.out.println("Comando inválido");
 					break;
 						
 				}
