@@ -30,7 +30,7 @@ public class Aplicacao {
 				switch(Integer.parseInt(num)) {
 				
 				case 1:
-					System.out.println("Informe o dia, mês e ano separados por '/'");
+					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
 					data = ler.nextLine();
 					
 					System.out.println("Informe a atividade");
@@ -69,28 +69,26 @@ public class Aplicacao {
 					break;
 					
 				case 5:
-					System.out.println("Informe o dia, m�s e ano separados por '/'");
+					System.out.println("Informe o dia, mês e ano separados por '/'");
 					data = ler.nextLine();
 					
 					System.out.println("Informe a atividade");
 					tarefa = ler.nextLine();
 					
-					System.out.println("Informe quantas vezes esta tarefa ser� repetida nas pr�ximas semanas");
+					System.out.println("Informe quantas vezes esta tarefa será repetida nas próximas semanas");
 					strRepeticoes = ler.nextLine();
 					repeticoes = Integer.parseInt(strRepeticoes);
 					
 					
-					//encapsular 
-				    int dia, mes, ano;
+					int dia, mes, ano;
+					    	
+					String partes[] = data.split("/");
+					dia = Integer.parseInt(partes[0]);
+					mes = Integer.parseInt(partes[1]);
+					ano = Integer.parseInt(partes[2]);
 				    	
-				    String partes[] = data.split("/");
-				    dia = Integer.parseInt(partes[0]);
-				    mes = Integer.parseInt(partes[1]);
-				    ano = Integer.parseInt(partes[2]);
-				    	
-				    Data dataReal = new Data(dia, mes, ano);
-				    //----------//
-				    
+					Data dataReal = new Data(dia, mes, ano);
+						
 					
 					for(int j=0; j<repeticoes; j++) {
 						novo = new Compromisso(data, tarefa);
@@ -107,7 +105,7 @@ public class Aplicacao {
 					break;
 					
 				default:
-					System.out.println("Comando inválido");
+					System.out.println("Comando invÃ¡lido");
 					break;
 						
 				}
