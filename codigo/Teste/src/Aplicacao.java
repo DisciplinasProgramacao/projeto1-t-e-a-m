@@ -7,7 +7,9 @@ public class Aplicacao {
 		System.out.println("2. Remover compromisso da agenda");
 		System.out.println("3. Consultar compromissos agendados");
 		System.out.println("4. Incluir compromisso recorrente");
-		System.out.println("5. Finalizar a agenda");
+		System.out.println("5. Filtrar os compromissos por mês");
+		System.out.println("6. Filtrar os compromissos por dia da semana");
+		System.out.println("7. Finalizar a agenda");
 		System.out.println("Digite a opcao desejada:");
 	}
 
@@ -16,6 +18,7 @@ public class Aplicacao {
 		ListaEncadeada minhaLista;
 		Compromisso novo, removido;
 		String data, tarefa, num, strRepeticoes;
+		Data dataR;
 		Integer i = 0, repeticoes;
 		Boolean isAtivo = true;
 
@@ -30,7 +33,7 @@ public class Aplicacao {
 				switch (Integer.parseInt(num)) {
 
 				case 1:
-					System.out.println("Informe o dia, mês e ano separados por '/'");
+					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
 					data = ler.nextLine();
 
 					System.out.println("Informe a atividade");
@@ -47,7 +50,12 @@ public class Aplicacao {
 
 				case 2:
 					try {
-						removido = minhaLista.remover(0);
+						System.out.println("Indique o ID do ítem a ser removido da lista: ");
+						minhaLista.imprimirID();
+						
+						String remove = ler.nextLine();
+						removido = minhaLista.remover(Integer.parseInt(remove));
+						
 						System.out.print("Item removido: ");
 						removido.imprimir();
 					} catch (Exception erro) {
@@ -63,42 +71,58 @@ public class Aplicacao {
 					}
 					break;
 				case 4:
-					System.out.println("Informe o dia, mês e ano separados por '/'");
+					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
 					data = ler.nextLine();
 
 					System.out.println("Informe a atividade");
 					tarefa = ler.nextLine();
 
-					System.out.println("Informe quantas vezes esta tarefa será repetida nas próximas semanas");
+					System.out.println("Informe quantas vezes esta tarefa serÃ¡ repetida nas prÃ³ximas semanas");
 					strRepeticoes = ler.nextLine();
+					
 					repeticoes = Integer.parseInt(strRepeticoes);
 
-					int dia, mes, ano;
-
-					String partes[] = data.split("/");
-					dia = Integer.parseInt(partes[0]);
-					mes = Integer.parseInt(partes[1]);
-					ano = Integer.parseInt(partes[2]);
-
-					Data dataReal = new Data(dia, mes, ano);
-
 					for (int j = 0; j < repeticoes; j++) {
-						i++;
 						novo = new Compromisso(data, tarefa);
-
-						data = dataReal.pularDias(dataReal, 7);
-
+						
+						dataR = novo.getDataReal();
+						dataR.pularDias(dataR, 7);
+						data = dataR.dataFormatada();
+						
 						try {
 							minhaLista.inserir(novo, i);
 						} catch (Exception erro) {
 							System.out.println(erro.getMessage());
 						}
-						
+						i++;
 					}
 
 					break;
-
+					
 				case 5:
+					System.out.println("Digite o mês escolhido para a filtragem: ");
+					try {
+						String filtroS = ler.nextLine();
+						int filtroI = Integer.parseInt(filtroS);
+						minhaLista.filtrarMes(filtroI);
+					} catch (Exception erro) {
+						System.out.println(erro.getMessage());
+					}
+					
+					break;
+				case 6:
+					System.out.println("Digite o dia da semana escolhido para a filtragem: ");
+					try {
+						String filtroS = ler.nextLine();
+						//int filtroI = Integer.parseInt(filtroS);
+						minhaLista.filtrarDiaS(filtroS);
+					} catch (Exception erro) {
+						System.out.println(erro.getMessage());
+					}
+					
+					break;
+					
+				case 7:
 					isAtivo = false;
 					System.out.println("Finalizado!");
 					break;
@@ -106,7 +130,7 @@ public class Aplicacao {
 				
 
 				default:
-					System.out.println("Comando inválido");
+					System.out.println("Comando invÃ¡lido");
 					break;
 
 				}
