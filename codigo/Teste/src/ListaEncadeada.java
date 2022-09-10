@@ -41,13 +41,13 @@ public class ListaEncadeada {
 			anterior.setProximo(novaCelula);
 			novaCelula.setProximo(proximaCelula);
 
-			if (posicao == tamanho) // a inserção ocorreu na última posição da lista
+			if (posicao == tamanho) // a inserÃ§Ã£o ocorreu na Ãºltima posiÃ§Ã£o da lista
 				ultimo = novaCelula;
 
 			tamanho++;
 
 		} else
-			throw new Exception("Não foi possível inserir o item na lista: a posição informada é inválida!");
+			throw new Exception("NÃ£o foi possÃ­vel inserir o item na lista: a posiÃ§Ã£o informada Ã© invÃ¡lida!");
 	}
 
 	public Compromisso remover(int posicao) throws Exception {
@@ -74,9 +74,9 @@ public class ListaEncadeada {
 
 				return (celulaRemovida.getItem());
 			} else
-				throw new Exception("Não foi possível remover o item da lista: a posição informada é inválida!");
+				throw new Exception("NÃ£o foi possÃ­vel remover o item da lista: a posiÃ§Ã£o informada Ã© invÃ¡lida!");
 		} else
-			throw new Exception("Não foi possível remover o item da lista: a lista está vazia!");
+			throw new Exception("NÃ£o foi possÃ­vel remover o item da lista: a lista estÃ¡ vazia!");
 	}
 
 	public void imprimir() throws Exception {
@@ -84,7 +84,7 @@ public class ListaEncadeada {
 		Celula aux;
 
 		if (!listaVazia()) {
-			//System.out.println("Conteúdo da Agenda:");
+			//System.out.println("ConteÃºdo da Agenda:");
 
 			aux = primeiro.getProximo();
 			while (aux != null) {
@@ -92,6 +92,68 @@ public class ListaEncadeada {
 				aux = aux.getProximo();
 			}
 		} else
-			throw new Exception("Não há compromissos na agenda!");
+			throw new Exception("NÃ£o hÃ¡ compromissos na agenda!");
 	}
+	
+	public void imprimirID() throws Exception{
+		Celula aux;
+		int id=0;
+		
+		if (!listaVazia()) {
+			//System.out.println("ConteÃºdo da Agenda:");
+
+			aux = primeiro.getProximo();
+			while (aux != null) {
+				aux.getItem().imprimirID(id);
+				aux = aux.getProximo();
+				id++;
+			}
+		} else
+			throw new Exception("NÃ£o hÃ¡ compromissos na agenda!");
+	}
+	
+	public void filtrarMes(int mes) throws Exception {
+
+		Celula aux;
+
+		if (!listaVazia()) {
+			//System.out.println("ConteÃºdo da Agenda:");
+
+			aux = primeiro.getProximo();
+			while (aux != null) {
+				String data = aux.getItem().getData();
+				String partes[] = data.split("/");
+				int mesI = Integer.parseInt(partes[1]);
+				if(mesI == mes) {
+					aux.getItem().imprimir();
+				}
+				aux = aux.getProximo();
+			}
+		} else
+			throw new Exception("NÃ£o hÃ¡ compromissos na agenda!");
+	}
+	
+	public void filtrarDiaS(String dia) throws Exception {
+
+		Celula aux;
+
+		if (!listaVazia()) {
+			//System.out.println("ConteÃºdo da Agenda:");
+
+			aux = primeiro.getProximo();
+			while (aux != null) {
+				String data = aux.getItem().getData();
+				Data dt = new Data();
+				//String partes[] = data.split("/");
+				//String DiaL = Integer.parseInt(partes[1]);
+				String diaL = dt.diaDaSemanaEm2022(data);
+				if(diaL.equals(dia)) {
+					aux.getItem().imprimir();
+				}
+				aux = aux.getProximo();
+			}
+		} else
+			throw new Exception("NÃ£o hÃ¡ compromissos na agenda!");
+	}
+	
 }
