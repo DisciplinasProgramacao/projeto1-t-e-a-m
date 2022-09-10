@@ -83,6 +83,7 @@ public class Aplicacao {
 					Data dataReal = new Data(dia, mes, ano);
 
 					for (int j = 0; j < repeticoes; j++) {
+						i++;
 						novo = new Compromisso(data, tarefa);
 
 						data = dataReal.pularDias(dataReal, 7);
@@ -92,7 +93,7 @@ public class Aplicacao {
 						} catch (Exception erro) {
 							System.out.println(erro.getMessage());
 						}
-						i++;
+						
 					}
 
 					break;
