@@ -33,7 +33,7 @@ public class Aplicacao {
 				switch (Integer.parseInt(num)) {
 
 				case 1:
-					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
+					System.out.println("Informe o dia, mês e ano separados por '/'");
 					data = ler.nextLine();
 
 					System.out.println("Informe a atividade");
@@ -71,13 +71,13 @@ public class Aplicacao {
 					}
 					break;
 				case 4:
-					System.out.println("Informe o dia, mÃªs e ano separados por '/'");
+					System.out.println("Informe o dia, mês e ano separados por '/'");
 					data = ler.nextLine();
 
 					System.out.println("Informe a atividade");
 					tarefa = ler.nextLine();
 
-					System.out.println("Informe quantas vezes esta tarefa serÃ¡ repetida nas prÃ³ximas semanas");
+					System.out.println("Informe quantas vezes esta tarefa será repetida nas próximas semanas");
 					strRepeticoes = ler.nextLine();
 					
 					repeticoes = Integer.parseInt(strRepeticoes);
@@ -130,7 +130,7 @@ public class Aplicacao {
 				
 
 				default:
-					System.out.println("Comando invÃ¡lido");
+					System.out.println("Comando inválido");
 					break;
 
 				}
